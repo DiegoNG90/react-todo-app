@@ -1,0 +1,25 @@
+h1{
+   text-align: center; 
+   color: rgb(195, 248, 70);
+   padding: 2rem;
+   margin: auto;
+   text-decoration: underline;
+   background: linear-gradient(to right, red, yellow)
+}
+/* input */
+.input-icon{
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.input-field{
+    padding-left: 2rem;
+    font-style: italic;
+}
+
+i{
+    position: absolute;
+    font-size: 1.5rem;
+    /* margin-left: 66.5%; */
+    padding: 8px;
+}
