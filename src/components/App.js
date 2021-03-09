@@ -19,6 +19,7 @@ const App = () => {
         
         <TodoList
             todoItems={todoItems}
+            setTodoItems={setTodoItems}
         />
     </div>
     )
