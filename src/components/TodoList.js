@@ -2,11 +2,14 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 
-const TodoList = () => {
+const TodoList = ({todoItems}) => {
+    let renderedTasks = todoItems.map((item) => {
+        return <TodoItem key={item.id} task={item.text}> </TodoItem>
+    })
+  
     return (
         <div>
-            <h2>Todo LIST</h2>
-            <TodoItem />
+           {renderedTasks}
         </div>
     )
 }

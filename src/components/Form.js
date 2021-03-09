@@ -1,8 +1,10 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 
 
-const Form = () => {
-    const[task, setTask] = useState('');
+
+const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
+
+    
 
     const onInputChange = (e) => {
         e.preventDefault();
@@ -12,20 +14,30 @@ const Form = () => {
         }else{
             $input.style.fontStyle = "italic"; 
         }
-        setTask( e.target.value );
+        setInputValue( e.target.value)
+        // console.log(e.target.value);
     }
-    useEffect(()=> {
+    const submitTodo = (e) => {
+        e.preventDefault();
+        setTodoItems([...todoItems, {text: inputValue, completed: false, id: Math.random()*1000}]);
+        setInputValue('');
+        
+        
+    }
 
-    })
     return (
         <div>
             <form className="form-group">
                 <div className="input-icon">
-                <i className="far fa-plus-square icon"></i>
+                <i 
+                    className="far fa-plus-square icon"
+                    onClick={submitTodo}
+                >
+                </i>
                 <input 
                     className="form-control input-field" 
                     type="text" placeholder="Ingresa una tarea"
-                    value={task}
+                    value={inputValue}
                     onInput={onInputChange}
                 />
                 </div>
