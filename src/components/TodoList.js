@@ -2,9 +2,9 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 
-const TodoList = ({todoItems}) => {
+const TodoList = ({todoItems,setTodoItems}) => {
     let renderedTasks = todoItems.map((item) => {
-        return <TodoItem key={item.id} task={item.text}> </TodoItem>
+        return <TodoItem key={item.id} task={item.text} setTodoItems={setTodoItems} todoItems={todoItems} item={item}> </TodoItem>
     })
   
     return (
