@@ -3,12 +3,22 @@ import React from 'react';
 
 
 const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
+    // const enterHandler = (e) => {
+    //     e.preventDefault();
+    //     const $form = document.querySelector(".form-group")
 
+    //     $form.addEventListener("keyup", (e)=> {
+    //         if(e.keyCode === 13){
+    //             e.preventDefault();
+    //             document.querySelector('.icon').click();
+    //         }
+    //     })
+    // }
     
 
     const onInputChange = (e) => {
-        e.preventDefault();
         const $input = document.querySelector(".input-field")
+        e.preventDefault();
         if($input.value){
             $input.style.fontStyle = "normal";
         }else{
@@ -27,7 +37,10 @@ const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
 
     return (
         <div>
-            <form className="form-group">
+            <form 
+                className="form-group"
+                // onSubmit={enterHandler}
+            >
                 <div className="input-icon">
                 <i 
                     className="far fa-plus-square icon"
@@ -39,6 +52,7 @@ const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
                     type="text" placeholder="Ingresa una tarea"
                     value={inputValue}
                     onInput={onInputChange}
+                    
                 />
                 </div>
             </form>
