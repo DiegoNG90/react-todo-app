@@ -7,6 +7,7 @@ h1{
    background: linear-gradient(to right, red, yellow)
 }
 /* input */
+
 .input-icon{
     margin-top: 2rem;
     width: 100%;
@@ -17,16 +18,28 @@ h1{
     font-style: italic;
 }
 
-.icon{
+.add{
     position: absolute;
-    font-size: 1.5rem;
-    /* margin-left: 66.5%; */
-    padding: 8px;
+    font-size: 1.3rem;
+    /*margin-left: 66.5%;
+    */padding: 3px;
     transition: all 1.2s ease;
+    border: none;
+    background-color: transparent;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
 }
-.icon:hover{
-    background-color: green;
-    cursor:pointer
+.add:hover{
+    background-color: rgba(0, 128, 0, 0.672);
+    cursor:pointer;
+    padding: 4px 5px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
 }
 
 .icon:active{

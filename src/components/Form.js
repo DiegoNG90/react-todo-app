@@ -3,27 +3,9 @@ import React from 'react';
 
 
 const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
-    // const enterHandler = (e) => {
-    //     e.preventDefault();
-    //     const $form = document.querySelector(".form-group")
-
-    //     $form.addEventListener("keyup", (e)=> {
-    //         if(e.keyCode === 13){
-    //             e.preventDefault();
-    //             document.querySelector('.icon').click();
-    //         }
-    //     })
-    // }
-    
 
     const onInputChange = (e) => {
-        const $input = document.querySelector(".input-field")
         e.preventDefault();
-        if($input.value){
-            $input.style.fontStyle = "normal";
-        }else{
-            $input.style.fontStyle = "italic"; 
-        }
         setInputValue( e.target.value)
         // console.log(e.target.value);
     }
@@ -40,18 +22,20 @@ const Form = ({inputValue,setInputValue,todoItems,setTodoItems}) => {
             <form 
                 className="form-group"
                 // onSubmit={enterHandler}
+                onSubmit={(e)=> submitTodo(e)}
             >
                 <div className="input-icon">
-                <i 
-                    className="far fa-plus-square icon"
-                    onClick={submitTodo}
-                >
-                </i>
+                <button
+                    className="add"
+                    type="submit">
+                    <i className="far fa-plus-square icon"></i>
+                </button>
                 <input 
-                    className="form-control input-field" 
+                    className="form-control input-field"  
                     type="text" placeholder="Ingresa una tarea"
                     value={inputValue}
-                    onInput={onInputChange}
+                    onChange={(e) =>onInputChange(e)}
+                    style={inputValue.length? {fontStyle: "normal"}: {fontStyle: "italic"}}
                     
                 />
                 </div>
